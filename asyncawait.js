@@ -28,10 +28,14 @@ function processOrder(order){
     // }) 
 
 
-async function serveOrder(){
-    let OrderPlaced = await placeOrder('coffee')
-    console.log(OrderPlaced)
-    let processedOrder = await processOrder(OrderPlaced)
-    console.log(processedOrder)
+async function serveOrder(){  
+    try {
+        let OrderPlaced = await placeOrder('tea')
+        console.log(OrderPlaced)
+        let processedOrder = await processOrder(OrderPlaced)
+        console.log(processedOrder)
+    } catch (error) {
+        console.log(error)
+    }
 }
 serveOrder()
